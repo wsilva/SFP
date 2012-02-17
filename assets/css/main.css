@@ -1,0 +1,219 @@
+::selection{ background-color: #E13300; color: white; }
+::moz-selection{ background-color: #E13300; color: white; }
+::webkit-selection{ background-color: #E13300; color: white; }
+
+#aside .box 
+{ 
+    background-color: #EAEAEA; 
+    padding: 15px; 
+    margin-bottom: 20px; 
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    background-image: -moz-linear-gradient(left, rgba(250,250,250,.2), rgba(150,150,150,.2), rgba(0,0,0,.0)) !important;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(250,250,250,.2)), color-stop(0.5, rgba(150,150,150,.2)), to(rgba(0,0,0,.0))) !important; 
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#30ffffff,endColorstr=#10000000) progid:DXImageTransform.Microsoft.Shadow(color=#000000,direction=135,strength=2); 
+    border: 1px solid #AAA; 
+}
+#aide h3 { font-size: 13px; margin-bottom: 10px; }
+
+
+
+.tabledetail
+{
+    border-collapse: collapse;
+    font-size: 12px;
+    border: 1px solid #999;
+}
+
+.tabledetail th
+{
+
+    font-weight: bold;
+    color: #FFF;
+    padding: 3px 5px;
+    background-color: #666;
+    border: 1px solid #fff;
+}
+
+.tabledetail tr:nth-child(2n+1) 
+{
+    background-color: #DADADA;
+}
+
+.tabledetail td
+{
+    padding: 3px 5px;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+
+code {
+    font-family: Consolas, Monaco, Courier New, Courier, monospace;
+    font-size: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #D0D0D0;
+    color: #002166;
+    display: block;
+    margin: 14px 0 14px 0;
+    padding: 12px 10px 12px 10px;
+}
+
+/*    #body{
+        margin: 0 15px 0 15px;
+    }*/
+
+p.footer{
+    text-align: right;
+    font-size: 11px;
+    border-top: 1px solid #D0D0D0;
+    line-height: 32px;
+    padding: 0 10px 0 10px;
+    margin: 20px 0 0 0;
+}
+
+#content h1 {
+    color: #444;
+    background-color: transparent;
+    border-bottom: 1px solid #D0D0D0;
+    font-size: 19px;
+    font-weight: normal;
+    margin: 0 0 14px 0;
+    padding: 14px 15px 10px 15px;
+}
+
+
+
+
+body
+{
+    background-color: #fff;
+    margin: 0px;
+    font: 13px/20px normal Helvetica, Arial, sans-serif;
+    color: #4F5155;
+}
+
+#container
+{
+    margin: 10px;
+    width: auto;
+    background: #fff;
+    border: 1px solid #D0D0D0;
+    -webkit-box-shadow: 0 0 8px #D0D0D0;
+    -moz-box-shadow: 0 0 8px #D0D0D0;
+}
+
+#header
+{
+    background: #ccc;
+    padding: 5px 20px 20px 20px;
+}
+
+
+#nav_user { text-align: right; }
+#nav_user ul { padding: 0; margin: 0; list-style: none; } 
+#nav_user ul li { padding: 0; margin: 0 20px 0 0; display:inline; }
+#nav_user li a { width: 100px; font-size: 11px; text-align: center; text-decoration: none; color: #74809A }
+#nav_user li a:hover { background-color: transparent !important; color: #c81419; }
+#nav_user ul li.selected a { color: #c81419; }
+
+#header h1 
+{ 
+    margin: 0;
+}
+#header h1 a{ color:#4F5155; text-decoration: none;}
+
+
+#navigation
+{
+    float: left;
+    width: 100%;
+    background: #333;
+}
+
+#navigation ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+#navigation ul li
+{
+    list-style-type: none;
+    display: inline;
+}
+
+#navigation li a
+{
+    display: block;
+    float: left;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    border-right: 1px solid #fff;
+}
+
+#navigation li a:hover { background: #c81419; }
+
+#content-container
+{
+    float: left;
+    width: 100%;
+    /*	background: #fff url(/wp-content/uploads/layout-two-fixed-background.gif) repeat-y 100% 0;*/
+    background: #FFF 100% 0;
+}
+
+#content
+{
+    clear: left;
+    float: left;
+    width: 63%;
+    padding: 20px 0;
+    margin: 0 0 0 30px;
+    display: inline;
+}
+
+#content h2 { margin: 0; }
+
+#aside
+{
+    float: right;
+    width: 23%;
+    padding: 20px 0;
+    margin: 0 20px 0 0;
+    display: inline;
+}
+
+#aside h3 { margin: 0; }
+
+#footer
+{
+    clear: both;
+    background: #ccc;
+    text-align: center;
+    padding: 20px;
+    height: 1%;
+}
+
+#footer a { text-decoration: none; color: #74809A }
+
+#footer a:hover { background-color: transparent !important; color: #c81419; }
+
+
+/* style the flash; there is an id flash at the section and a class at each of the flash divs */
+#flash_notice, #flash_error, #flash_alert {
+    padding: 5px 8px;
+    margin-bottom: 10px;
+    width: 425px;
+}
+
+#flash_notice {
+}
+
+
+#flash { }
+.flash { padding: 10px; margin-bottom: 30px; }
+.error, .alert { background-color: #FCC; border: solid 1px #C66; }
+.notice { background-color: #CFC; border: solid 1px #6C6; }
+.myinfo { background-color: #00cc00; }
