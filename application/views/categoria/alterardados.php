@@ -48,7 +48,7 @@
                 'd' => 'Débito',
                 'c' => 'Crédito',
             );
-            echo form_dropdown('tipo', $opts, $categoria->tipo);
+            echo form_dropdown('tipo', $opts, $categoria->tipo, (set_value('tipo') ? set_value('tipo') : $categoria->tipo));
             echo "</p>";
 
 

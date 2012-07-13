@@ -5,6 +5,7 @@ class CategoriaModel extends CI_Model
 
     var $id;
     var $titulo = '';
+    var $tipo = '';
     var $dt_cadastro = '0000-00-00 00:00:00';
     var $dt_alteracao = '0000-00-00 00:00:00';
 
@@ -23,6 +24,7 @@ class CategoriaModel extends CI_Model
 
                 $this->id = $id;
                 $this->titulo = $result[0]->titulo;
+                $this->tipo = $result[0]->tipo;
                 $this->dt_cadastro = $result[0]->dt_cadastro;
                 $this->dt_alteracao = $result[0]->dt_alteracao;
             }
@@ -59,12 +61,14 @@ class CategoriaModel extends CI_Model
     
     function grava()
     {
+        
         //inserting new user
         if($this->id == null)
         {
             $insertData = array(
                'id' => $this->id ,
                'titulo' => $this->titulo,
+               'tipo' => $this->tipo,
                'dt_cadastro' => date('Y-m-d H:i:s'),
                'dt_alteracao' => date('Y-m-d H:i:s')
             );
@@ -77,9 +81,11 @@ class CategoriaModel extends CI_Model
         else
         {
             $updateData = array(
-               'titulo' => $this->titulo ,
+               'tipo' => $this->tipo,
+               'titulo' => $this->titulo,
                'dt_alteracao' => date('Y-m-d H:i:s')
             );
+
             $this->db->where('id',  $this->id);
             $this->db->update('categorias', $updateData);
         }

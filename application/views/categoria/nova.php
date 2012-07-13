@@ -40,7 +40,7 @@
                   'd'  => 'Débito',
                   'c'    => 'Crédito',
                 );
-            echo form_dropdown('tipo', $opts, 'd');
+            echo form_dropdown('tipo', $opts, 'd', set_value('tipo'));
             echo "</p>";
 
             echo "<p>";

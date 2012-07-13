@@ -41,12 +41,11 @@ class Categoria extends CI_Controller
         $this->load->helper('date');
 
         //table header
-        $tablearr[] = array('Título', 'Criação', 'Última alteração', '');
+        $tablearr[] = array('Título', 'Tipo', 'Criação', 'Última alteração', '');
 
         //varrendo categorias
         foreach ($categorias_pag as $categoria)
         {
-
 
             //ações
             $actions = "<a href='/categoria/alterar/{$categoria->id}' >editar</a>";
@@ -55,9 +54,12 @@ class Categoria extends CI_Controller
             //create update
             $created = mdate('%d/%m/%Y %Hh%i', mysql_to_unix($categoria->dt_cadastro));
             $updated = mdate('%d/%m/%Y %Hh%i', mysql_to_unix($categoria->dt_alteracao));
+            
+            //tipo
+            $tipo = $categoria->tipo=='c' ? 'crédito' : 'debito';
 
             //populando html table
-            $tablearr[] = array($categoria->titulo, $created, $updated, $actions);
+            $tablearr[] = array($categoria->titulo, $tipo,  $created, $updated, $actions);
         }
 
 
@@ -106,10 +108,15 @@ class Categoria extends CI_Controller
                 'field' => 'titulo',
                 'label' => 'Título',
                 'rules' => 'trim|required|min_length[5]|max_length[255]|xss_clean'
+            ),
+            array(
+                'field' => 'tipo',
+                'label' => 'Tipo',
+                'rules' => 'trim|required|min_length[1]|max_length[1]|regex_match[/^[cd]{1}$/]'
             )
         );
         $this->form_validation->set_rules($validacoes);
-
+        
         # mensagens de erro
         $this->form_validation->set_message('required', 'O campo <strong>%s</strong> é obrigatório');
         $this->form_validation->set_message('min_length', 'O campo <strong>%s</strong> deve ter no mínimo %s caracteres');
@@ -140,6 +147,7 @@ class Categoria extends CI_Controller
 
             # populando obj Categoria
             $categoria->titulo = $this->input->post('titulo');
+            $categoria->tipo = $this->input->post('tipo');
             $categoria->dt_cadastro = date('Y-m-d H:i:s');
             $categoria->dt_alteracao = $categoria->dt_cadastro;
 
@@ -236,6 +244,11 @@ class Categoria extends CI_Controller
                 'field' => 'titulo',
                 'label' => 'Título',
                 'rules' => 'trim|required|min_length[5]|max_length[255]|xss_clean'
+            ),
+            array(
+                'field' => 'tipo',
+                'label' => 'Tipo',
+                'rules' => 'trim|required|min_length[1]|max_length[1]|regex_match[/^[cd]{1}$/]'
             )
         );
         $this->form_validation->set_rules($validacoes);
